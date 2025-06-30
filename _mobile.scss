@@ -1,0 +1,117 @@
+@media (max-width: 768px) {
+   .center {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .header {
+        background-image: none;
+        background-image: url(img/Star\ 5.svg), url(img/Star3..png), url(img/Star\ 3.svg), url(img/Star5..png), url(img/Vector..png);
+        background-repeat: no-repeat;
+        background-position: 37px 97px, 91px 64px, 303px 580px, 272px 557px, 187px -103px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 700px;
+        
+        &__title {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 49px;
+            padding-top: 147px;
+            max-width: 262px;
+        }
+        &__text {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+            width: 296px;
+            max-width: 296px;
+        }
+        &__highlight {
+            font-size: 16px;
+            line-height: 20px;
+        }
+        &__button {
+            width: 285px;
+            height: 55px;
+            font-size: 16px;
+            padding: 16px 28px 16px 28px;
+        }
+    }
+
+    .animated-strip {
+        height: 51px;
+        gap: 27px;
+        padding: 16px 24px 16px 24px;
+
+        &__item {
+            gap: 27px;
+        }
+        &__text {
+            font-size: 16px;
+        }
+        &__star {
+            display: none;
+        }
+        &__mobile {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .games {
+        display: none;
+    }
+
+    .game-box {
+        background-image: none;
+        padding-bottom: 48px;
+
+        &__title {
+            font-size: 40px;
+            line-height: 49px;
+            padding-top: 48px;
+            padding-bottom: 48px;
+        }
+        &__content {
+            gap: 24px;
+        }
+        &__cart {
+            display: block;
+        }
+        &__img {
+            width: 343px;
+            height: 284px;
+        }
+        &__description {
+            padding: 29.04px 29.04px 32.67px 29.04px;
+        }
+        &__product {
+            padding-bottom: 16px;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 39px;
+        }
+        &__text {
+            font-size: 16px;
+            line-height: 20px;
+            padding-bottom: 32px;
+            
+        }
+        &__button {
+            padding: 16px 110px;
+            font-size: 16px;
+        }
+        }
+    }
+
+    .footer {
+        height: 100px;
+
+        &__text {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
