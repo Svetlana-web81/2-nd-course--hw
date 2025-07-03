@@ -28,15 +28,12 @@ for (const key in obj) {
 let n = 1000;
 let num = 0;
 
-while (n <=50) {
+while (n >=50) {
     n /=2;
     console.log(n);
     num++;
 }
-console.log("Результат: ", n);
-console.log("Количество итераций: ", num);
-
-
+console.log(`Количество циклов: ${num}`);
 
 //Задание 6
 let deyFridey = 5;
