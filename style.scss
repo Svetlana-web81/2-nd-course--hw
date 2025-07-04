@@ -102,7 +102,7 @@ html {
   background: rgb(188, 236, 48);
   padding: 27px 0;
   overflow: hidden;
-
+  
   &__item {
     display: flex;
     gap: 51px;
@@ -118,6 +118,18 @@ html {
   &__mobile {
     display: none;
   }
+}
+
+@keyframes move {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+.animated-bar {
+  flex-shrink: 0;
+  display: flex;
+  gap: 51px;
+  animation: move 20s linear infinite;  
 }
 
 .games {
