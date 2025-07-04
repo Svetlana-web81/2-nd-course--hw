@@ -411,7 +411,7 @@ html {
     display: block;
   }
   .game-box__img {
-    width: 343px;
+    width: 100%;
     border-radius: 30px;
   }
   .game-box__description {
