@@ -118,6 +118,21 @@ html {
   display: none;
 }
 
+@keyframes move {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.animated-bar {
+  flex-shrink: 0;
+  display: flex;
+  gap: 51px;
+  animation: move 20s linear infinite;
+}
+
 .games {
   display: flex;
   flex-direction: column;
@@ -318,7 +333,7 @@ html {
   line-height: 29px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 375px) and (max-width: 767px) {
   .center {
     padding-left: 16px;
     padding-right: 16px;
@@ -396,11 +411,11 @@ html {
     display: block;
   }
   .game-box__img {
-    width: 343px;
-    height: 284px;
+    width: 100%;
+    border-radius: 30px;
   }
   .game-box__description {
-    padding: 29.04px 29.04px 32.67px 29.04px;
+    padding: 29px 29px 32px 29px;
   }
   .game-box__product {
     padding-bottom: 16px;
