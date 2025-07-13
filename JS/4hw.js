@@ -26,12 +26,12 @@ for (const key in obj) {
 
 //Задание 5
 let n = 1000;
-let num = 0;
+let num5 = 0;
 
 while (n >=50) {
     n /=2;
     console.log(n);
-    num++;
+    num5++;
 }
 console.log(`Количество циклов: ${num}`);
 

@@ -23,7 +23,7 @@ button {
 
 .header {
   background: #E1FF8F;
-  background-image: url(img/Star\ 2.svg), url(img/Star\ 3.svg), url(img/Star\ 4.svg), url(img/Star\ 5.svg), url(img/starbig.svg);
+  background-image: url(img/Star2..png), url(img/Star3..png), url(img/Star4..png), url(img/Star5.png), url(img/starbig.svg);
   background-position: 63px 94px, 156px 69px, 1013px 568px, 948px 538px, 854px -333px;
   background-repeat: no-repeat;
 }
@@ -141,7 +141,7 @@ html {
   align-self: stretch;
   background: #202027;
   height: 100%;
-  background-image: url(img/Star\ 11.svg), url(img/Star\ 12.svg), url(img/Star\ 1.svg);
+  background-image: url(img/Star11.png), url(img/Star12.png), url(img/star1.png);
   background-position: 25px 770px, 40px 822px, 933px 77px;
   background-repeat: no-repeat;
   padding-bottom: 50px;
@@ -254,7 +254,7 @@ html {
 
 .game-box {
   background: #202027;
-  background-image: url(img/Star\ 6.svg), url(img/Star\ 7.svg), url(img/Star\ 8.svg), url(img/Star\ 10.svg);
+  background-image: url(img/Star6_.png), url(img/Star7_.png), url(img/Star8_.png), url(img/Star10_.png);
   background-repeat: no-repeat;
   background-position: 1320px 126px, 1277px 93px, 1319px 3366px, 1249px 3414px;
   padding-bottom: 144px;
@@ -333,21 +333,20 @@ html {
   line-height: 29px;
 }
 
-@media (min-width: 375px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .center {
     padding-left: 16px;
     padding-right: 16px;
   }
   .header {
     background-image: none;
-    background-image: url(img/Star\ 5.svg), url(img/Star3..png), url(img/Star\ 3.svg), url(img/Star5..png), url(img/Vector..png);
+    background-image: url(img/Star2..png), url(img/Star3..png), url(img/Star4..png), url(img/Star5..png), url(img/Vector..png);
     background-repeat: no-repeat;
     background-position: 37px 97px, 91px 64px, 303px 580px, 272px 557px, 187px -103px;
-    text-align: center;
+    height: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 700px;
   }
   .header__title {
     font-size: 40px;
@@ -357,6 +356,7 @@ html {
     max-width: 262px;
   }
   .header__text {
+    color: rgb(0, 0, 0);
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
@@ -403,15 +403,21 @@ html {
     line-height: 49px;
     padding-top: 48px;
     padding-bottom: 48px;
+    padding-left: 16px;
   }
   .game-box__content {
     gap: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .game-box__cart {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .game-box__img {
-    width: 100%;
+    width: 343px;
+    height: 284px;
     border-radius: 30px;
   }
   .game-box__description {
@@ -439,4 +445,44 @@ html {
 .footer__text {
   font-size: 16px;
   line-height: 20px;
+}
+
+@media (max-width: 1024px) {
+  .center {
+    padding-left: calc(50% - 393px);
+    padding-right: calc(50% - 393px);
+  }
+  .header {
+    background-position: 63px 94px, 156px 69px, 850px 568px, 800px 538px, 599px -370px;
+  }
+  .game-box__img {
+    width: 343px;
+  }
+  .game-box__description {
+    padding: 30px;
+  }
+  .game-box__product {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39px;
+    padding-bottom: 18px;
+  }
+  .game-box__text {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+}
+@media (min-width: 768px) and (max-width: 833px) {
+  .center {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .header {
+    background-position: 63px 94px, 156px 69px, 550px 600px, 500px 590px, 450px -370px;
+  }
 }/*# sourceMappingURL=style.css.map */
