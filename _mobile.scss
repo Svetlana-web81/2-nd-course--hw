@@ -1,63 +1,102 @@
-@media (max-width: 767px) {
+@media (max-width: 768px) {
    .center {
         padding-left: 16px;
         padding-right: 16px;
     }
 
+    .btn {
+        cursor: pointer;
+        width: 285px;
+        height: 55px;
+        font-size: 16px;
+    }
+
     .header {
-        background-image: none;
-        background-image: url(img/Star2..png), url(img/Star3..png), url(img/Star4..png), url(img/Star5..png), url(img/Vector..png);
-        background-repeat: no-repeat;
-        background-position: 37px 97px, 91px 64px, 303px 580px, 272px 557px, 187px -103px;
         height: 700px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
+
         &__title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 147px;
+        }
+
+        &__info {
+            width: 296px;
+            text-align: center;
+        }
+                
+        &__heading {
             font-size: 40px;
             font-weight: 700;
             line-height: 49px;
-            padding-top: 147px;
-            max-width: 262px;
         }
+
         &__text {
             color: rgb(0, 0, 0);
             font-size: 16px;
             font-weight: 400;
             line-height: 20px;
-            width: 296px;
-            max-width: 296px;
+            margin-bottom: 36px;
         }
+
         &__highlight {
             font-size: 16px;
             line-height: 20px;
         }
-        &__button {
-            width: 285px;
-            height: 55px;
-            font-size: 16px;
-            padding: 16px 28px 16px 28px;
+
+        /* __________  фоновые звезды  __________ */
+        &__img-star1 {
+            width: 18px;
+            top: 557px;
+            left: 273px;
+        }
+
+        &__img-star2 {
+            width: 35px;
+            top: 97px;
+            left: 38px;
+        }
+
+        &__img-star3 {
+            width: 21px;
+            top: 64px;
+            left: 92px;
+        }
+
+        &__img-star4 {
+            width: 39px;
+            top: 580px;
+            left: 304px;
+        }
+
+        &__img-star-big {
+            display: none;
+        }
+
+        &__img-star-mob {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
         }
     }
 
+    /* __________  бегущая строка  __________ */
     .animated-strip {
         height: 51px;
-        gap: 27px;
-        padding: 16px 24px 16px 24px;
 
         &__item {
             gap: 27px;
+            padding-left: 0;
         }
+
         &__text {
             font-size: 16px;
         }
+
         &__star {
-            display: none;
-        }
-        &__mobile {
-            display: flex;
-            align-items: center;
+            width: 19px;
         }
     }
 
@@ -65,52 +104,73 @@
         display: none;
     }
 
+    .games__img,
+    .game-box__img {
+        display: none;
+    }
+
+    .game-card__image {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
     .game-box {
-        background-image: none;
+        padding-top: 48px;
         padding-bottom: 48px;
 
         &__title {
             font-size: 40px;
             line-height: 49px;
-            padding-top: 48px;
-            padding-bottom: 48px;
-            padding-left: 16px;
+            margin-bottom: 48px;
         }
+
         &__content {
-            gap: 24px;
-            padding-left: 16px;
-            padding-right: 16px;
+            /* display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, auto);
+            grid-row-gap: 24px; */
+
+
+            display: grid;
+            grid-template-columns: 343px;
+            grid-template-rows: repeat(6, auto);
+            grid-row-gap: 24px;
+            justify-content: center;
         }
-        &__cart {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+
+        &__card {
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 285px auto;
         }
-        &__img {
-            width: 343px;
-            height: 284px;
-            border-radius: 30px;
+
+        &__image {
+            width: 100%;
+            height: 100%;
         }
+
         &__description {
+            width: 100%;
             padding: 29px 29px 32px 29px;
         }
+
         &__product {
-            padding-bottom: 16px;
             font-size: 32px;
             font-weight: 700;
             line-height: 39px;
+            margin-bottom: 16px;
         }
+
         &__text {
             font-size: 16px;
             line-height: 20px;
-            padding-bottom: 32px;
-            
+            margin-bottom: 32px;        
         }
-        &__button {
-            padding: 16px 110px;
-            font-size: 16px;
-        }
-        }
+    }
+
+    .game-box__card:nth-child(2n+1) .game-box__image {
+        order: 0;
     }
 
     .footer {
@@ -121,3 +181,4 @@
             line-height: 20px;
         }
     }
+}

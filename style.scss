@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -17,120 +21,159 @@ a {
   text-decoration: none;
 }
 
-button {
-  cursor: pointer;
-}
-
-.header {
-  background: #E1FF8F;
-  background-image: url(img/Star2..png), url(img/Star3..png), url(img/Star4..png), url(img/Star5.png), url(img/starbig.svg);
-  background-position: 63px 94px, 156px 69px, 1013px 568px, 948px 538px, 854px -333px;
-  background-repeat: no-repeat;
-}
-
-.header__title{
-  color: #202027;
-  font-family: Montserrat;
-  font-size: 64px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  max-width: 769px;
-  max-height: 358px;
-  padding-top: 196px;
-}
-
-.header__text {
-  color: #202027;
-  font-family: Montserrat;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 32px;
-  padding-top: 24px;
-  max-width: 720px;
-}
-
-.header__highlight {
-  color: #202027;
-  font-family: Montserrat;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 32px;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.header__button {
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 247px;
   height: 66px;
-  border: 1px solid rgb(32, 32, 39);
   border-radius: 60px;
-  background: rgb(32, 32, 39);
-  color: #FFFFFF;
+  border: 1px solid rgb(32, 32, 39);
+  background-color: rgb(32, 32, 39);
+  text-decoration: none;
+  color: rgb(255, 255, 255);
   font-size: 24px;
   font-weight: 600;
   line-height: 141.69%;
-  letter-spacing: 0%;
-  display: inline-block;
-  text-align: center;
-  margin-top: 48px;
-  margin-bottom: 156px;
-  padding: 16px 28px 16px 28px;
-  font-family: Montserrat;
-  transition: all 0.5s; 
+  font-family: inherit;
   cursor: url("img/cursor.png"), pointer;
-    
-   &:hover {
-    background: rgb(255, 255, 255);
-    color: black;
-    } 
+  transition: all 1s;
+      
+  &:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+  }
 }
 
-.animated-strip {
+.header {
   display: flex;
-  align-items: center;
-  gap: 51px;
-  height: 90px;
-  box-sizing: border-box;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  -webkit-backdrop-filter: blur(50px);
-  backdrop-filter: blur(50px);
-  background: rgb(188, 236, 48);
-  padding: 27px 0;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #E1FF8F;
+  position: relative;
+  height: 800px;
   overflow: hidden;
-  
-  &__item {
-    display: flex;
-    gap: 51px;
-    flex-shrink: 0;
+  min-width: 374px;
+
+  &__title {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin-top: 196px;
   }
-  &__text {
-    color: rgb(32, 32, 39);
-    font-size: 30px;
+
+  &__info {
+    width: 768px;
+  }
+
+  &__heading{
+    color: #202027;
+    font-size: 64px;
+    font-style: normal;
     font-weight: 700;
-    line-height: 110%;
-    text-transform: uppercase;
+    line-height: normal;
+    margin-bottom: 24px;
   }
-  &__mobile {
+
+  &__text {
+    color: #202027;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    margin-bottom: 48px;
+  }
+
+  &__highlight {
+    color: #202027;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+  }
+
+  /* __________  фоновые звезды  __________ */
+  &__img-star1 {
+    position: absolute;
+    top: 535px;
+    right: 440px;
+  }
+
+  &__img-star2 {
+    position: absolute;
+    top: 94px;
+    left: 63px;
+  }
+
+  &__img-star3 {
+    position: absolute;
+    top: 69px;
+    left: 156px;
+  }
+
+  &__img-star4 {
+    position: absolute;
+    top: 565px;
+    right: 330px;
+  }
+
+  &__img-star-big {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__img-star-mob {
     display: none;
   }
 }
 
-@keyframes move {
-  from { transform: translateX(100%); }
-  to { transform: translateX(-100%); }
+/* __________  бегущая строка  __________ */
+.animated-strip {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 90px;
+  background-color: #BCEC30;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  &:hover &__item {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - 20px));
+    }
+  }
+  
+  &__item {
+    display: flex;
+    gap: 51px;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 19px;
+    padding-right: 30px;
+    user-select: none;
+    animation: scroll 15s linear infinite;
+  }
+
+  &__text {
+    color: #202027;
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
 }
 
-.animated-bar {
-  flex-shrink: 0;
-  display: flex;
-  gap: 51px;
-  animation: move 20s linear infinite;  
-}
 
 .games {
   display: flex;
@@ -140,41 +183,60 @@ html {
   align-self: stretch;
   background: #202027;
   height: 100%;
-  background-image: url(img/Star11.png), url(img/Star12.png), url(img/star1.png);
-  background-position: 25px 770px, 40px 822px, 933px 77px;
-  background-repeat: no-repeat;
   padding-bottom: 50px;
+  min-width: 374px;
+
+  /* __________  фоновые звезды  __________ */
+  &__img-star1 {
+    position: absolute;
+    top: 1576px;
+    left: 28px;
+  }
+
+  &__img-star2 {
+    position: absolute;
+    top: 1634px;
+    left: 42px;
+  }
+
+  &__img-star-big {
+    position: absolute;
+    top: 877px;
+    right: 0;
+  }
 }
 
 .games__title {
   color: #FFF;
-  font-family: Montserrat;
   font-size: 64px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  padding-top: 94px;   
+  padding-top: 94px; 
+  position: relative;
+  z-index: 1;  
 }
 
 .games__description {
   margin: 0;
-            width: 700px;
+  width: 700px;
   color: #FFF;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: 32px; 
   padding-bottom: 72px;
+  position: relative;
+  z-index: 1;
 }
 
 .games__list {
-  max-height: 1060px;
-  max-width: 1200px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   gap: 32px;
   align-items: start;
+  position: relative;
+  z-index: 1;
 }
 
 .game-card {
@@ -187,40 +249,44 @@ html {
   cursor: url("img/cursor.png"), pointer;
 
   &:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
   }
 }
 
 .game-card__image{
   border-radius: 30px;
   height: 314px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .game-card_top {
   margin-top: -40px;
 }
 
+.game-card__image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .game-card__image_1 {
-  background: url(img/card1.svg);
+  background: url(img/g-card1.png);
 }
 .game-card__image_2 {
-  background: url(img/card2.svg);
+  background: url(img/g-card2.png);
 }
 .game-card__image_3{
-  background: url(img/card3.svg);
+  background: url(img/g-card3.png);
 }
 .game-card__image_4{
-  background: url(img/cart4.png);
+  background: url(img/g-card4.png);
 }
 .game-card__image_5{
-  background: url(img/card5.svg); 
+  background: url(img/g-card5.png); 
 }
 .game-card__image_6{
-  background: url(img/card6.svg);
+  background: url(img/g-card6.png);
 }
+
 
 .game-card__number {
   width: 111px;
@@ -247,73 +313,124 @@ html {
   max-width: 372px;
 }
 
+
 .game-box {
-  background: #202027;
-  background-image: url(img/Star6_.png), url(img/Star7_.png), url(img/Star8_.png), url(img/Star10_.png);
-  background-repeat: no-repeat;
-  background-position: 1320px 126px, 1277px 93px, 1319px 3366px, 1249px 3414px;
+  background-color: #202027;
+  padding-top: 46px;
   padding-bottom: 144px;
+  min-width: 374px;
 
   &__title {
-  color: rgb(255, 255, 255);
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 78px;
-  padding-top: 46px;
-  padding-bottom: 76px;
+    color: rgb(255, 255, 255);
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 78px;
+    margin-bottom: 72px;
   }
+
   &__content {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+    display: grid;
+    grid-template-columns: 1200px;
+    grid-template-rows: repeat(6, 500px);
+    grid-row-gap: 32px;
   }
-  &__cart {
-  display: flex;
+
+  &__card {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-radius: 30px;
+    box-shadow: 0px 20px 67px -12px rgba(0, 0, 0, 0.13);
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+    color: #202027;
+    text-decoration: none;
+    z-index: 1;
+    position: relative;
+  }
+
+  &__image {
   border-radius: 30px;
-  box-shadow: 0px 20px 67px -12px rgba(0, 0, 0, 0.13);
-  background: rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+    
   }
-  &__cart_reverse {
-  display: flex;
-  flex-direction: row-reverse;
-  }
+
   &__description {
     padding: 48px;
   }
+
   &__product {
-  color: rgb(32, 32, 39);
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 59px;
-  padding-bottom: 24px;
+    color: rgb(32, 32, 39);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 59px;
+    margin-bottom: 24px;
   }
+
   &__text {
-  color: rgb(32, 32, 39);
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 32px;
-  padding-bottom: 32px;
+    color: rgb(32, 32, 39);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    margin-bottom: 36px;
   }
-  &__button {
-  border-radius: 60px;
-  background: rgb(32, 32, 39);
-  text-decoration: none;
-  box-sizing: border-box;
-  padding: 16px 75px;
-  color: rgb(255, 255, 255);
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 141.69%;
-  font-family: inherit;
-  cursor: url("img/cursor.png"), pointer;
-  transition: all 1s;
+
+  /* __________  фоновые звезды  __________ */
+  &__img-star1 {
+    position: absolute;
+    top: 2350px;
+    right: 250px;
   }
-  &__button:hover {
-  background: #ffffff;
-  color: #000000;
-  border: 1px solid rgb(0, 0, 0);
+
+  &__img-star2 {
+    position: absolute;
+    top: 2380px;
+    right: 170px;
+  }
+
+  &__img-star3 {
+    position: absolute;
+    top: 5650px;
+    right: 300px;
+  }
+
+  &__img-star4 {
+    position: absolute;
+    top: 5600px;
+    right: 200px;
   }
 }
+
+
+.game-box__image_1 {
+  background-image: url(img/gb-card1.png);
+}
+
+.game-box__image_2 {
+  background-image: url(img/gb-card2.png);
+}
+
+.game-box__image_3{
+  background-image: url(img/gb-card3.png);
+}
+
+.game-box__image_4{
+  background-image: url(img/gb-card4.png);
+}
+
+.game-box__image_5{
+  background-image: url(img/gb-card5.png); 
+}
+
+.game-box__image_6{
+  background-image: url(img/gb-card6.png);
+}
+
+.game-box__card:nth-child(2n+1) .game-box__image {
+  order: 1;
+}
+
 
 .footer {
   background: #BDED35;
@@ -321,6 +438,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 374px;
 
   &__text {
     color: rgb(0, 0, 0);
@@ -330,5 +448,6 @@ html {
   }
 }
 
-@import 'mobile';
 @import 'tablet';
+@import 'mobile';
+
