@@ -1,43 +1,66 @@
-
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .center {
         padding-left: calc(50% - 393px);
         padding-right: calc(50% - 393px);
     }
 
-    .header {
-        background-position: 63px 94px, 156px 69px, 850px 568px, 800px 538px, 599px -370px;
+
+    /* __________  фоновые звезды  __________ */
+    .game-box {        
+        &__img-star1 {
+            top: 2940px;
+            right: 130px;
+        }
+
+        &__img-star2 {
+            top: 2980px;
+            right: 50px;
+        }
+
+        &__img-star3 {
+            top: 5340px;
+            right: 140px;
+        }
+
+        &__img-star4 {
+            top: 5290px;
+            right: 40px;
+        }
     }
 
-    .game-box__img {
-        width: 343px;
+    .game-box__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 350px);
+        min-width: 343px;
     }
+
     .game-box__description {
-        padding: 30px;
+        padding: 32px;
     }
+
     .game-box__product {
         font-size: 32px;
         font-weight: 700;
         line-height: 39px;
-        padding-bottom: 18px;
     }
+
     .game-box__text {
         color: rgb(0, 0, 0);
-        font-family: Montserrat;
         font-size: 16px;
         font-weight: 400;
-        line-height: 20px;
-        letter-spacing: 0px;
-        text-align: left;    
-    }   
-}
-
-@media (min-width: 768px) and (max-width: 833px) {
-    .center {
-        padding-left: 24px;
-        padding-right: 24px;
+        line-height: 20px;  
     }
-    .header {
-        background-position: 63px 94px, 156px 69px, 550px 600px, 500px 590px, 450px -370px;
+
+    .games__list {
+        align-items: stretch;        
+    }
+
+    .game-card {
+        grid-column: span 6;
+    }
+
+    .game-card_top {
+        margin-top: 0;
     }
 }
