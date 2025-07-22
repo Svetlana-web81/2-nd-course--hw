@@ -26,7 +26,7 @@ function simpleArithmetic() {
         userAnswer = Number(prompt(userQuestion));
        
         if (result === userAnswer) {
-            alert("Правельный ответ!")
+            alert("Правильный ответ!")
         } else {
             alert("Неправильно!");
         }
