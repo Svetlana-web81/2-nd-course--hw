@@ -46,10 +46,12 @@ console.log(anotherArray);
 //Задание 6
 
 const toSortArray = [9, 8, 7, 'a', 6, 5];
-toSortArray.sort();
-let sortedArray = toSortArray.sort((a, b) => b - a);
-let lastElement = toSortArray.pop();
-console.log(sortedArray);
+// Удаляем 'a'
+const filtered = toSortArray.filter(item => item !== 'a');
+// Сортируем по убыванию
+const sorted = filtered.sort((a, b) => b - a);
+console.log(sorted); // [9, 8, 7, 6, 5]
+
 
 //Задание 7
 
@@ -99,11 +101,10 @@ console.log(squred([1, 2, 3]));
 
 //Задание 12
 
-function getLenth(params) {
-    return arr.map(item => item.length);    
+function getLength(params) {
+    return params.map(item => item.length);
 }
-
-console.log(getLenth(["Hi", "World"]));
+console.log(getLength(["Hi", "World"])); // [2, 5]
 
 //Задание 13
 
@@ -141,7 +142,7 @@ function myRandomNum() {
 
         console.log(newRandomArr);
         const sum = newRandomArr.reduce((addition, number) => addition + number, 0);
-        console.log(`Средеарифметическое равно: ${Math.floor(sum / newRandomArr.length)}`);
+        console.log(`Средне арифметическое равно: ${Math.round(sum / newRandomArr.length)}`);
 
 
 
