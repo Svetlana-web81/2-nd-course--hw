@@ -4,14 +4,19 @@ function turnOverText() {
 
     do {
         userEnter = prompt("Введите ваше слово!");
+
+        if (userEnter === null || userEnter === "") {
+            alert("Вы отменили ввод или ничего не ввели.");
+            return; 
+        }
+
         if (regexp.test(userEnter)) {
             alert(userEnter.split('').reverse().join(''));
         } else {
-            alert("Вы ввели не слово введите, пожалуйста, слово");
+            alert("Вы ввели не слово, введите, пожалуйста, слово");
         }
-    
-    } while (!regexp.test(userEnter) || userEnter === '');
 
+    } while (!regexp.test(userEnter)); 
 }
 
 
