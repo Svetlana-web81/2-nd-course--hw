@@ -1,9 +1,12 @@
 function rockPaperScissors() {
     const choices = ["камень", "ножницы", "бумага"];
-    const userChoice = prompt("Выберите: камень, ножницы или бумага?");
+    let userChoice = prompt("Выберите: камень, ножницы или бумага?");
+
+    // Преобразуем ввод пользователя в нижний регистр
+    userChoice = userChoice.toLowerCase();
 
     if (!choices.includes(userChoice)) {
-        alert("Некорректный ввод. Пожалуйста, выберите камень, ножницы или бумагу.");
+        alert("Некорректный ввод. Пожалуйста, выберите камень, ножницы или бумага.");
         return;
     }
 
@@ -28,3 +31,4 @@ function rockPaperScissors() {
 
     alert(result);
 }
+
