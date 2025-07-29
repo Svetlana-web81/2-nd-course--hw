@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    
 
     <header class="header">
         <div class="header__title center">
@@ -166,10 +167,11 @@
 
             <article class="game-box__card">
                 <div class="game-box__image game-box__image_6"></div>
-                <div class="game-box__description">
+                <div class="game-box__description" id="gameBoxDescription">
                     <h3 class="game-box__product" id="game6">Генератор случайных цветов</h3>
                     <p class="game-box__text">Игра, в которой при клике на кнопку фон страницы меняется на случайный.</p>
-                    <a class="game-box__button btn" href="#">Играть!</a>
+                     <button class="game-box__button btn" id="colorButton">Играть!</button>
+                    
                 </div>
             </article>
         </div>
@@ -184,10 +186,31 @@
     <article class="footer center">
         <h4 class="footer__text">Все права защищены.</h4>
     </article>
+   
 
     <script src="HW5/game_number_1.js"></script>
     <script src="HW6/simple_arithmetic_2.js"></script>
     <script src="HW7/games.js"></script>
     <script src="HW8/rock_paper_scissors.js"></script>
+    <script>
+const colorButton = document.querySelector('#colorButton');
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';  
+    let color = '#';  
+    for (let i = 0; i < 6; i++) { 
+        color += letters[Math.floor(Math.random() * 16)]; 
+    }
+    return color; 
+}
+
+colorButton.addEventListener('click', () => {
+    const randomColor = getRandomColor(); 
+    document.body.style.backgroundColor = randomColor;
+    document.querySelector("#gameBoxDescription").style.backgroundColor = randomColor; 
+});
+
+    </script>
+     
 </body>
 </html>

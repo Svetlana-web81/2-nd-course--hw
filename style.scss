@@ -10,6 +10,7 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
+  transition: background-color 0.5s ease;
 }
 
 .center {
@@ -38,6 +39,8 @@ a {
   font-family: inherit;
   cursor: url("img/cursor.png"), pointer;
   transition: all 1s;
+  padding: 10px 20px;
+
       
   &:hover {
     background-color: rgb(255, 255, 255);

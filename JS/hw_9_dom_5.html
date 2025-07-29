@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>Задание 5: Работа с querySelectorAll</h1>
+    <p class="description">Описание 4</p>
+    <p class="text">Простой параграф</p>
+    <p class="description">Описание 5</p>
+    <button class="btn">Нажмите меня</button>
+    <script>
+       const descriptionElClass = document.querySelectorAll('.description');
+       const btn = document.querySelector('.btn');
+
+
+       btn.addEventListener('click', () => {
+       descriptionElClass.forEach(element => {
+        element.textContent = 'Новый текст';
+       });
+    });
+    </script>
+</body>
+</html>
