@@ -29,4 +29,4 @@
 # Использованные технологии:
 VanillaJS, HTML5, CSS3 (Sass)
 
-# Деплой проекта:https://github.com/Svetlana-web81/2-nd-course--hw/new/main
+# Деплой проекта:https://github.com/Svetlana-web81/2-nd-course--hw
